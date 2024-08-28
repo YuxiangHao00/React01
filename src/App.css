@@ -1,0 +1,32 @@
+.App {
+  text-align: center;
+}
+
+.menu-active{
+  background: #F3F4F6;
+  color: #1E3A8A;
+  font-weight: bold;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+
+@media (max-width: 768px) {
+  .flex {
+    flex-direction: column; /* 垂直排列 */
+  }
+  aside{
+    width: 100vw !important; 
+  }
+  aside nav{
+    flex-direction: row !important; /* 横向排列 */
+    justify-content: space-between; /* 均匀分布 */
+  }
+  .menu-active{
+    border-radius: 0;
+  }
+  main {
+    padding: 20px; /* 主内容区内边距 */
+  }
+
+}
