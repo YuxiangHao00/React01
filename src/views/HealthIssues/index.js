@@ -52,10 +52,6 @@ export default function Component() {
         <div className="space-y-10 flex flex-col items-center">
           <h2 className="text-xl font-bold text-center text-[#0F296D]">Prevalence of different diseases among Australian migrants</h2>
           <div className="flex items-center space-x-2">
-            <Select className="w-48" placeholder="year spent in Aus">
-              <Select.Option value="1">1 year</Select.Option>
-              <Select.Option value="2">2 years</Select.Option>
-            </Select>
             <Select className="w-48" placeholder="Place of birth">
               <Select.Option value="place1">Place 1</Select.Option>
               <Select.Option value="place2">Place 2</Select.Option>
