@@ -57,9 +57,9 @@
     flex-direction: row !important; /* 横向排列 */
     justify-content: space-between; /* 均匀分布 */
   }
-  /* .menu-active{
+  .menu-active{
     border-radius: 0;
-  } */
+  }
   main {
     padding: 20px; /* 主内容区内边距 */
   }
