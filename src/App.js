@@ -4,6 +4,7 @@ import './App.css';
 import LandPage from './views/LandPage';
 import HealthIssues from './views/HealthIssues';
 import SuburbFinder from './views/SuburbFinder';
+import siteName from './images/SitName.svg';
 
 function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
@@ -85,14 +86,23 @@ function App() {
         <div className="flex min-h-screen bg-gray-100">
           <aside className="w-64 bg-blue-900 text-white py-4 menu">
             <div className="flex items-center justify-center h-20">
+              <Link to="/land-page">
+                <img
+                  src="/logo.jpg"
+                  alt="Logo"
+                  className="h-12 w-12"
+                  width="80"
+                  height="80"
+                  style={{ aspectRatio: "50/50", objectFit: "cover" }}
+                />
+              </Link>
+            </div>
+            <div className="flex items-center justify-center h-10">
               <img
-                src="/logo.jpg"
-                alt="Logo"
-                className="h-12 w-12"
-                width="80"
-                height="80"
-                style={{ aspectRatio: "50/50", objectFit: "cover" }}
-              />
+                  src={siteName}
+                  alt="Site Name"
+                  className="mt-1"
+                />
             </div>
             <nav className="mt-10 flex flex-col justify-around w-full">
               <Link to="/land-page">
@@ -133,7 +143,7 @@ function App() {
               </Link>
             </nav>
           </aside>
-          <main className="flex-1 p-10">
+          <main className="flex-1">
             <Routes>
               <Route path="/" element={<LandPage />} />
               <Route path="/land-page" element={<LandPage />} />
