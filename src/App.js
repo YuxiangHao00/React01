@@ -83,7 +83,7 @@ function App() {
     <Router>
       <div className="App">
         <div className="flex min-h-screen bg-gray-100">
-          <aside className="w-64 bg-blue-900 text-white py-4">
+          <aside className="w-64 bg-blue-900 text-white py-4 menu">
             <div className="flex items-center justify-center h-20">
               <img
                 src="/logo.jpg"
@@ -98,10 +98,10 @@ function App() {
               <Link to="/land-page">
                 <div 
                   onClick={() => setCurrentPath('/land-page')} 
-                  className={`flex items-center mb-4 px-4 py-6 cursor-pointer transition-colors duration-200 
+                  className={`flex items-center mb-4 px-4 py-6 cursor-pointer  
                     ${currentPath === '/land-page' 
                       ? 'bg-white text-blue-900 font-bold menu-active' 
-                      : 'text-white hover:bg-blue-800'}`}
+                      : 'text-white '}`}
                 >
                   <HomeIcon className="w-5 h-5 mr-3" />
                   Land page
@@ -110,10 +110,10 @@ function App() {
               <Link to="/health-issues">
                 <div 
                   onClick={() => setCurrentPath('/health-issues')} 
-                  className={`flex items-center mb-4 px-4 py-6 cursor-pointer transition-colors duration-200 
+                  className={`flex items-center mb-4 px-4 py-6 cursor-pointer  
                     ${currentPath === '/health-issues' 
                       ? 'bg-white text-blue-900 font-bold menu-active' 
-                      : 'text-white hover:bg-blue-800'}`}
+                      : 'text-white '}`}
                 >
                   <HospitalIcon className="w-5 h-5 mr-3" />
                   Health issues
@@ -122,10 +122,10 @@ function App() {
               <Link to="/suburb-finder">
                 <div 
                   onClick={() => setCurrentPath('/suburb-finder')} 
-                  className={`flex items-center mb-4 px-4 py-6 cursor-pointer transition-colors duration-200 
+                  className={`flex items-center mb-4 px-4 py-6 cursor-pointer  
                     ${currentPath === '/suburb-finder' 
                       ? 'bg-white text-blue-900 font-bold menu-active' 
-                      : 'text-white hover:bg-blue-800'}`}
+                      : 'text-white '}`}
                 >
                   <MapIcon className="w-5 h-5 mr-3" />
                   Suburb Finder
