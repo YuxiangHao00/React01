@@ -32,7 +32,7 @@ function SexualReproductiveHealth() {
       </ul>
       <h3 className='subtitle'>Get Started By Clicking the button below</h3>
       <button className='main-btn' style={{ margin: '58px 0 0 52px' }}>Start Learning</button>
-      <img src={bg} style={{height: '80%', width: '40%', position: 'absolute', right: '20px', bottom: '20px',zIndex:'-1' }} />
+      <img src={bg} style={{height: '80%', width: '40%', position: 'absolute', right: '20px', bottom: '20px' }} />
     </div>
   );
 }
