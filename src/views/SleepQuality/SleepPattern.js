@@ -15,28 +15,24 @@ const SleepPattern = () => {
     setIsAnalyzeEnabled(allPatternsComplete);
   }, [patterns]);
 
-  // Function to add a new pattern row
   const addPattern = () => {
     if (patterns.length < 7) {
       setPatterns([...patterns, { start: null, end: null }]);
     }
   };
 
-  // Function to remove the last pattern row
   const removePattern = () => {
     if (patterns.length > 3) {
       setPatterns(patterns.slice(0, -1));
     }
   };
 
-  // Add this function to clear a specific pattern
   const clearPattern = (index) => {
     const updatedPatterns = [...patterns];
     updatedPatterns[index] = { start: null, end: null };
     setPatterns(updatedPatterns);
   };
 
-  // Render time scale
   const renderTimeScale = () => {
     const hours = Array.from({ length: 24 }, (_, i) => (i + 18) % 24);
     return (
@@ -50,7 +46,6 @@ const SleepPattern = () => {
     );
   };
 
-  // Handle time selection
   const handleTimeSelection = (index, time) => {
     const updatedPatterns = [...patterns];
     const currentPattern = updatedPatterns[index];
@@ -67,14 +62,12 @@ const SleepPattern = () => {
     setPatterns(updatedPatterns);
   };
 
-  // Format time
   const formatTime = (time) => {
     const hours = Math.floor(time);
     const minutes = Math.round((time - hours) * 60);
     return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
   };
 
-  // Calculate duration for a single pattern
   const calculateDuration = (start, end) => {
     if (start === null || end === null) return '0h 0m';
     
@@ -91,7 +84,6 @@ const SleepPattern = () => {
     return `${hours}h ${minutes}m`;
   };
 
-  // Calculate total sleep time
   const calculateTotalSleepTime = () => {
     let totalHours = 0;
     let totalMinutes = 0;
@@ -111,7 +103,6 @@ const SleepPattern = () => {
     return `${totalHours}h ${totalMinutes}m`;
   };
 
-  // Update the renderPatternRow function
   const renderPatternRow = (pattern, index) => {
     const hours = Array.from({ length: 48 }, (_, i) => (i * 0.5 + 18) % 24);
     const duration = calculateDuration(pattern.start, pattern.end);
@@ -160,9 +151,7 @@ const SleepPattern = () => {
   };
 
   const handleAnalyze = () => {
-    // 这里添加分析逻辑
     console.log("Analyzing sleep patterns...");
-    // 可以在这里添加更多的分析逻辑或者调用API等
   };
 
   return (

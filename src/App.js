@@ -7,7 +7,7 @@ import SuburbFinder from './views/SuburbFinder';
 import siteName from './images/SitName.svg';
 import SleepQuality from './views/SleepQuality';
 import NoiseDetection from './views/SleepQuality/NoiseDetection';
-import SleepPattern from './views/SleepQuality/SleepPattern'; // 添加这行
+import SleepPattern from './views/SleepQuality/SleepPattern';
 import SexualReproductiveHealth from './views/SexualReproductiveHealth';
 
 const SleepIcon = (props) => (
