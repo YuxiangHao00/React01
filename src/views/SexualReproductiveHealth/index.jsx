@@ -1,12 +1,13 @@
 import React from 'react';
-import './style.less'
+import '../../style.less'
 import bg from './images/bg.png'
+import { useNavigate } from 'react-router-dom';
 function SexualReproductiveHealth() {
+  const history = useNavigate();
   return (
     <div className="main-page">
       <header>
         <h1 className="page-title">Empowering Migrant Women for a Healthier Future</h1>
-
       </header>
       <ul className='info-list'>
         <li className='info-item'>
@@ -31,8 +32,12 @@ function SexualReproductiveHealth() {
         </li>
       </ul>
       <h3 className='subtitle'>Get Started By Clicking the button below</h3>
-      <button className='main-btn' style={{ margin: '58px 0 0 52px' }}>Start Learning</button>
-      <img src={bg} style={{height: '80%', width: '40%', position: 'absolute', right: '20px', bottom: '20px' }} />
+      <button onClick={() => {
+         history(
+           `/sexual-reproductive-health/Triage`
+        )
+       }} className='main-btn' style={{ margin: '58px 0 0 52px' }}>Start Learning</button>
+      <img src={bg} style={{ height: '80%', width: '40%', position: 'absolute', right: '20px', bottom: '20px' }} />
     </div>
   );
 }

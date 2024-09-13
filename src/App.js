@@ -9,7 +9,7 @@ import SleepQuality from './views/SleepQuality';
 import NoiseDetection from './views/SleepQuality/NoiseDetection';
 import SleepPattern from './views/SleepQuality/SleepPattern';
 import SexualReproductiveHealth from './views/SexualReproductiveHealth';
-
+import Triage from './views/SexualReproductiveHealth/triage';
 const SleepIcon = (props) => (
   <svg
     {...props}
@@ -164,7 +164,7 @@ function AppContent() {
           <MenuItem to="/health-issues" icon={HospitalIcon} label="Health issues" />
           <MenuItem to="/suburb-finder" icon={MapIcon} label="Suburb Finder" />
           <MenuItem to="/sleep-quality" icon={SleepIcon} label="Sleep Quality" />
-          <MenuItem to="/sexual-reproductive-health" icon={HeartIcon} label="Sexual&Reproductive" />
+          <MenuItem to="/sexual-reproductive-health/" icon={HeartIcon} label="Sexual&Reproductive" />
         </nav>
       </aside>
       <main className="flex-1 overflow-y-auto bg-[#F3F4F6] ml-64">
@@ -177,6 +177,8 @@ function AppContent() {
           <Route path="/sleep-quality/noise-detection" element={<NoiseDetection />} />
           <Route path="/sleep-quality/sleep-pattern" element={<SleepPattern />} />
           <Route path="/sexual-reproductive-health" element={<SexualReproductiveHealth />} />
+          <Route path="/sexual-reproductive-health/Triage" element={<Triage />} />
+          
         </Routes>
       </main>
     </div>
