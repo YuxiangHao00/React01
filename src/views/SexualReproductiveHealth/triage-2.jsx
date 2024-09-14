@@ -27,7 +27,7 @@ export default (props) => {
           <li className='description-list info-details'>Healthcare should be about respect and privacy, not shame or judgment.</li>
           <li className='description-list info-details'>Safe access zones mean no one should have to walk a “gauntlet of awkward stares and signs” when seeing their doctor.</li>
         </ul>
-        <button onClick={()=>{props.actType(4)}} className='size-btn' style={{float:'right',marginRight:'20px'}}>Next →</button>
+        <button className='size-btn' style={{float:'right',marginRight:'20px'}}>Next →</button>
       </div>
     </div>
 

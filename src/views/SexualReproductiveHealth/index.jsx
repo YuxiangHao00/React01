@@ -4,10 +4,12 @@ import bg from './images/bg.png'
 import Triage1 from './triage-1';
 import Triage from './triage';
 import Triage11 from './triage-1-1';
-
+import Triage12 from './triage-1-2';
+import Triage2 from './triage-2';
 function SexualReproductiveHealth() {
   const [type, setType] = useState(0)
   const actType = (val) => {
+    console.log(val)
     setType(val)
   }
   return (<>
@@ -47,6 +49,9 @@ function SexualReproductiveHealth() {
     {type === 1 && <Triage actType={(val) => { actType(val) }} />}
     {type === 2 && <Triage1 actType={(val) => { actType(val) }} />}
     {type === 3 && <Triage11 actType={(val) => { actType(val) }} />}
+    {type === 4 && <Triage12 actType={(val) => { actType(val) }} />}
+    {type === 5 && <Triage2 actType={(val) => { actType(val) }} />}
+    
   </>
   );
 }
