@@ -17,7 +17,9 @@ export default (props) => {
       <li><img src={img11} style={{height:'420px'}} /></li>
     </div>
     <div className='flex-box' style={{marginTop:'-100px'}}>
-      <li><img src={img12} style={{height:'420px'}} /></li>
+      <li><img onClick={()=>{
+         props.actType(5)
+      }} src={img12} style={{height:'420px'}} /></li>
     </div>
     <img src={img10} style={{height:'220px',position:'absolute',right:'20px',bottom:'20px'}} />
   </div>
