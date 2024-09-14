@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import '../../style.less'
 import bg from './images/bg.png'
-import Triage1 from './triage-1';
-import Triage from './triage';
-import Triage11 from './triage-1-1';
-import Triage12 from './triage-1-2';
-import Triage2 from './triage-2';
+import Triage1 from './Module_1_Triage';
+import Triage from './SE_Main_Triage';
+import Triage11 from './Module_1_Rights_1';
+import Triage12 from './Module_1_Rights_2';
+import Triage2 from './Module_1_Planning_1';
 function SexualReproductiveHealth() {
   const [type, setType] = useState(0)
   const actType = (val) => {
@@ -41,7 +41,7 @@ function SexualReproductiveHealth() {
       </ul>
       <h3 className='subtitle'>Get Started By Clicking the button below</h3>
       <button onClick={() => {
-        setType(1)
+        actType(1)
 
       }} className='main-btn' style={{ margin: '58px 0 0 52px' }}>Start Learning</button>
       <img src={bg} style={{ height: '80%', width: '40%', position: 'absolute', right: '20px', bottom: '20px' }} />

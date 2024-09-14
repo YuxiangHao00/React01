@@ -49,7 +49,7 @@ export default (props) => {
         </li>
       </ul>
     </div>
-    <button onClick={()=>{props.actType(0)}} className='size-btn' style={{float:'right',marginRight:'20px'}}>Jump back to the Module</button>
+    <button onClick={()=>{props.actType(2)}} className='size-btn' style={{float:'right',marginRight:'20px'}}>Jump back to the Module</button>
     
   </div>
 }   
