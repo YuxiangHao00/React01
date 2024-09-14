@@ -6,6 +6,10 @@ import Triage from './SE_Main_Triage';
 import Triage11 from './Module_1_Rights_1';
 import Triage12 from './Module_1_Rights_2';
 import Triage2 from './Module_1_Planning_1';
+import Triage3 from './Module_1_Concent_1';
+import Triage31 from './Module_1_Concent_2';
+import Triage32 from './Module_1_Concent_3';
+
 function SexualReproductiveHealth() {
   const [type, setType] = useState(0)
   const actType = (val) => {
@@ -51,7 +55,10 @@ function SexualReproductiveHealth() {
     {type === 3 && <Triage11 actType={(val) => { actType(val) }} />}
     {type === 4 && <Triage12 actType={(val) => { actType(val) }} />}
     {type === 5 && <Triage2 actType={(val) => { actType(val) }} />}
-    
+    {type === 6 && <Triage3 actType={(val) => { actType(val) }} />}
+    {type === 7 && <Triage31 actType={(val) => { actType(val) }} />}
+    {type === 8 && <Triage32 actType={(val) => { actType(val) }} />}
+
   </>
   );
 }
