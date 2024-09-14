@@ -11,18 +11,18 @@ export default (props) => {
       <h1 className="page-title">Get Started by clicking on any one of the following modules</h1>
     </header>
     <div className='flex-box'>
-      <li><img src={img13} style={{height:'420px'}} onClick={()=>{
-         props.actType(3)
-      }}/></li>
-      <li><img onClick={()=>{
-         props.actType(6)
-      }} src={img11} style={{height:'420px'}} /></li>
+      <li><img src={img13} style={{ height: '420px', cursor: 'pointer' }} onClick={() => {
+        props.actType(3)
+      }} /></li>
+      <li><img onClick={() => {
+        props.actType(6)
+      }} src={img11} style={{ height: '420px', cursor: 'pointer' }} /></li>
     </div>
-    <div className='flex-box' style={{marginTop:'-120px'}}>
-      <li><img onClick={()=>{
-         props.actType(5)
-      }} src={img12} style={{height:'420px'}} /></li>
+    <div className='flex-box' style={{ marginTop: '-120px' }}>
+      <li><img onClick={() => {
+        props.actType(5)
+      }} src={img12} style={{ height: '420px', cursor: 'pointer' }} /></li>
     </div>
-    <img  src={img10} style={{height:'220px',position:'absolute',right:'20px',bottom:'20px'}} />
+    <img src={img10} style={{ height: '220px', position: 'absolute', right: '20px', bottom: '20px' }} />
   </div>
 }
