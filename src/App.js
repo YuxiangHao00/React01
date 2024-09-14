@@ -9,7 +9,6 @@ import SleepQuality from './views/SleepQuality';
 import NoiseDetection from './views/SleepQuality/NoiseDetection';
 import SleepPattern from './views/SleepQuality/SleepPattern';
 import SexualReproductiveHealth from './views/SexualReproductiveHealth';
-import Triage from './views/SexualReproductiveHealth/triage';
 const SleepIcon = (props) => (
   <svg
     {...props}
@@ -23,10 +22,10 @@ const SleepIcon = (props) => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path d="M2 4v16"/>
-    <path d="M2 8h18a2 2 0 0 1 2 2v10"/>
-    <path d="M2 17h20"/>
-    <path d="M6 8v9"/>
+    <path d="M2 4v16" />
+    <path d="M2 8h18a2 2 0 0 1 2 2v10" />
+    <path d="M2 17h20" />
+    <path d="M6 8v9" />
   </svg>
 );
 
@@ -119,8 +118,8 @@ function AppContent() {
     const isActive = currentPath === to;
     return (
       <Link to={to}>
-        <div 
-          onClick={() => setCurrentPath(to)} 
+        <div
+          onClick={() => setCurrentPath(to)}
           className={`menu-item flex items-center mb-4 px-4 py-6 cursor-pointer  
             ${isActive ? 'menu-active' : 'text-white'}`}
         >
@@ -177,8 +176,6 @@ function AppContent() {
           <Route path="/sleep-quality/noise-detection" element={<NoiseDetection />} />
           <Route path="/sleep-quality/sleep-pattern" element={<SleepPattern />} />
           <Route path="/sexual-reproductive-health" element={<SexualReproductiveHealth />} />
-          <Route path="/sexual-reproductive-health/Triage" element={<Triage />} />
-          
         </Routes>
       </main>
     </div>
