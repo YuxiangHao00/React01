@@ -3,6 +3,8 @@ import '../../style.less'
 import bg from './images/bg.png'
 import Triage1 from './triage-1';
 import Triage from './triage';
+import Triage11 from './triage-1-1';
+
 function SexualReproductiveHealth() {
   const [type, setType] = useState(0)
   const actType = (val) => {
@@ -44,6 +46,7 @@ function SexualReproductiveHealth() {
     </div>}
     {type === 1 && <Triage actType={(val) => { actType(val) }} />}
     {type === 2 && <Triage1 actType={(val) => { actType(val) }} />}
+    {type === 3 && <Triage11 actType={(val) => { actType(val) }} />}
   </>
   );
 }
