@@ -5,6 +5,7 @@ import e1 from '../../images/SQ/SQ_SA_e1.png';
 import e2 from '../../images/SQ/SQ_SA_e2.png';
 import e3 from '../../images/SQ/SQ_SA_e3.png';
 import { useNavigate } from 'react-router-dom';
+import SleepQualityGauge from './SleepQualityComponent';
 
 const SelfAssess = () => {
   const navigate = useNavigate();
@@ -15,7 +16,8 @@ const SelfAssess = () => {
   const [heartRate, setHeartRate] = useState('');
   const [error, setError] = useState('');
   const [result, setResult] = useState(null);
-  
+  const [updateKey, setUpdateKey] = useState(0);
+
   const handleInputChange = (setter) => (e) => {
     const value = e.target.value;
     if (value === '' || parseFloat(value) >= 0) {
@@ -38,15 +40,10 @@ const SelfAssess = () => {
   };
 
   const handleAssess = async () => {
-    if (!sleepDuration) {
-      setError('Please enter sleep duration');
+    if (!sleepDuration || !sleepStartTime) {
+      setError('Please enter sleep duration and start time');
       return;
     }
-    if (!sleepStartTime) {
-      setError('Please enter sleep start time');
-      return;
-    }
-
     setError('');
 
     const today = new Date();
@@ -73,6 +70,7 @@ const SelfAssess = () => {
     try {
       const response = await axios.get(`https://link2herresilience.com.au/sleep_quality/v1.1/analyse?${params.toString()}`);
       setResult(response.data);
+      setUpdateKey(prevKey => prevKey + 1);
       setError('');
     } catch (error) {
       console.error('Error:', error);
@@ -84,15 +82,29 @@ const SelfAssess = () => {
   const renderResult = () => {
     if (!result) return null;
 
+    console.log('Rendering result:', result);
+    console.log('Threshold Low:', result.threshold_low);
+    console.log('Threshold High:', result.threshold_high);
+    console.log('Overall Quality Mean:', result.overall_quality_mean);
+    console.log('Overall Quality:', result.overall_quality);
+
     const qualityData = result.quality_category[0].quality;
     const qualityColor = qualityData.category === 'BAD' ? 'red' : 'green';
 
     return (
       <div className="result-container">
-        <h3>Sleep Quality Analysis Result</h3>
+        <h3>Sleep Quality Analysis Result:</h3>
+        <div className="gauge-container">
+          <SleepQualityGauge 
+            key={updateKey}
+            overallQualityMean={result.overall_quality_mean}
+            thresholdLow={result.threshold_low}
+            thresholdHigh={result.threshold_high}
+            category={result.overall_quality}
+          />
+        </div>
         <p>Quality Category: <span style={{color: qualityColor, fontWeight: 'bold'}}>{qualityData.category}</span></p>
-        <p>Ratio in Sample Population: {(qualityData.fraction).toFixed(3)}%</p>
-        {/* <p>Quality Range: {qualityData.low} - {qualityData.high}</p> */}
+        <p>Ratio in Sample Population: {(qualityData.fraction * 100).toFixed(3)}%</p>
         <p>Suggestion: {qualityData.suggestion}</p>
       </div>
     );
