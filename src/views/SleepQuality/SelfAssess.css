@@ -186,5 +186,5 @@
   .gauge-container {
     width: 450px;
     height: 300px;
-    margin: 20px auto;
+    margin: 20px auto 0 auto;
   }
